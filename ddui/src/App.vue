@@ -1,5 +1,7 @@
 <template>
-  <d-button name="OK"/>
+  <d-button>设置</d-button>
+  <d-button icon="setting">设置</d-button>
+  <d-button icon="setting" icon-position="right">设置</d-button>
 </template>
 
 <script>

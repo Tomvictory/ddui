@@ -1,6 +1,13 @@
 <template>
-  <button class="d-button">
-    {{ name }}
+  <button class="d-button" :class="{[`icon-${iconPosition}`]:true}">
+	<svg v-if="icon" class="icon">
+		<use :xlink:href="`#i-${icon}`"></use>
+	</svg>
+	<div class="content">
+		<slot>
+		</slot>
+	</div>
+    
   </button>
 </template>
 
@@ -8,25 +15,48 @@
 export default {
   name: 'd-button',
   props: {
-    name: String
+    name: String,
+	icon: String,
+	iconPosition: String
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss">
 .d-button{
 	padding: 0 1em;
+	margin: .2em;
 	height: var(--button-height);
 	font-size:var(--font-size);
 	border-radius: var(--border-radius);
 	border: 1px solid var(--border-color);
 	background: var(--button-bg);
-}
-.d-button:hover{
-	border-color: var(--border-color-hover);
-}
-.d-button:active{
-	border-color: var(--button-active-bg);
+	display: inline-flex;justify-content: center;align-items: center;
+	vertical-align: middle;
+	&:hover {
+		border-color: var(--border-color-hover);
+	}
+	&:active{
+		border-color: var(--button-active-bg);
+	}
+	&:focus{
+		outline: none;
+	}
+	> .content{
+		order: 2;
+	};
+	> .icon{
+		order: 1;margin-left: 0;margin-right: .1em;
+	}
+	&.icon-right{
+		> .content{
+			order: 1;
+		}
+		> .icon{
+			order: 2;margin-left: .1em;margin-right: 0;
+		}
+	}
+	
 }
 </style>
