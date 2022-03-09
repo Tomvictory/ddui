@@ -1,7 +1,7 @@
 <template>
   <d-button>设置</d-button>
   <d-button icon="setting">设置</d-button>
-  <d-button icon="setting" icon-position="right">设置</d-button>
+  <d-button icon="setting" icon-position="top">设置</d-button>
 </template>
 
 <script>
