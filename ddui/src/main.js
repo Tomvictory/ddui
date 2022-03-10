@@ -1,4 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+const app = createApp(App)
 
-createApp(App).mount('#app')
+
+import Button from './components/button.vue'
+import Icon from './components/icon.vue'
+app.component('d-icon', Icon)
+app.component('d-button', Button)
+
+
+
+app.mount('#app')

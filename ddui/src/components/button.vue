@@ -1,8 +1,6 @@
 <template>
   <button class="d-button" :class="{[`icon-${iconPosition}`]:true}">
-	<svg v-if="icon" class="icon">
-		<use :xlink:href="`#i-${icon}`"></use>
-	</svg>
+	<d-icon v-if="icon" :name="icon"></d-icon>
 	<div class="content">
 		<slot>
 		</slot>
@@ -15,8 +13,7 @@
 export default {
   name: 'd-button',
   props: {
-    name: String,
-	icon: String,
+	icon: {},
 	iconPosition: {
 		default:'left',
 		validator(value) {
