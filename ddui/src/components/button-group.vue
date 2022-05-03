@@ -23,8 +23,10 @@
 		vertical-align: middle;
 		> .d-button{
 			margin: 0;
-			margin-left: -1px;
 			border-radius: 0;
+			&:not(:first-child){
+				margin-left: -1px;
+			}
 			&:first-child{
 				margin-left: .2em;
 				border-top-left-radius: var(--border-radius);
