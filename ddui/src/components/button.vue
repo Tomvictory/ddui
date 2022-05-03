@@ -1,6 +1,7 @@
 <template>
   <button class="d-button" :class="{[`icon-${iconPosition}`]:true}">
 	<d-icon class="icon" v-if="icon" :name="icon"></d-icon>
+	<d-icon class="loading" name="loading"></d-icon>
 	<div class="content">
 		<slot>
 		</slot>
@@ -26,6 +27,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+	@keyframes spin{
+		0% {transform: rotate(0deg);}
+		100% {transform: rotate(360deg);}
+	}
 .d-button{
 	padding: 0 1em;
 	margin: .2em;
@@ -58,6 +63,9 @@ export default {
 		> .icon{
 			order: 2;margin-left: .1em;margin-right: 0;
 		}
+	}
+	.loading{
+		animation: spin 1s infinite linear;
 	}
 	
 }
