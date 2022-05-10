@@ -11,8 +11,11 @@
 </template>
 
 <script>
+import Icon from './icon'
 export default {
-  name: 'd-button',
+  components:{
+	  'd-icon': Icon
+  },
   props: {
 	icon: {},
 	loading: {
