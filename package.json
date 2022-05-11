@@ -2,6 +2,7 @@
   "name": "ddui",
   "private": true,
   "version": "0.1.0",
+  "homepage": "https://Tomvictory.github.io/ddui",
   "scripts": {
     "start": "parcel index.html --no-cache",
     "dev-test": "parcel watch test/* --no-cache & karma start",
