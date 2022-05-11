@@ -8,12 +8,15 @@ jobs:
     name: My first job,
     steps:
     - name: Checkout
-        uses: actions/checkout@master
-    
-    - name: Build and Deploy
-        uses: JamesIves/github-pages-deploy-action@master
-        env:
-            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-            BRANCH: main
-            FOLDER: build
-            BUILD_SCRIPT: npm install && npm run test
+        uses: actions/checkout@v2
+        uses: actions/setup-node@v2
+      with:
+        node-version: '12'
+    - run: npm install
+    - run: npm run test
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: main
+        FOLDER: dist
