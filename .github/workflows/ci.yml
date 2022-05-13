@@ -6,15 +6,16 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
       uses: actions/checkout@v2
+    - name: SetupNode
       uses: actions/setup-node@v2
       with:
         node-version: '12'
-    - run: npm install
-    - run: npm run test
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: main
         FOLDER: dist
+        BUILD_SCRIPT: npm install && npm run test
