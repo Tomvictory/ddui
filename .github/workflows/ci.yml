@@ -12,6 +12,11 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '12'
+    - name: Install and Build
+      run: |
+        npm install
+        npm install parcel
+        npm run test        
   my-deploy:
     runs-on: ubuntu-latest
     needs: my-build
@@ -22,4 +27,3 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
         FOLDER: dist
-        BUILD_SCRIPT: npm install && npm run test
