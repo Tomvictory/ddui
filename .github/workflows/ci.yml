@@ -21,5 +21,5 @@ jobs:
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: main
-        FOLDER: dist
+        FOLDER: build
         BUILD_SCRIPT: npm install && npm run test
