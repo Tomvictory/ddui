@@ -1,7 +1,6 @@
 {
-  "name": "ddui",
-  "private": true,
-  "version": "0.1.0",
+  "name": "tom-test-1",
+  "version": "0.0.1",
   "homepage": "https://Tomvictory.github.io/ddui",
   "scripts": {
     "start": "parcel index.html --no-cache",
