@@ -8,14 +8,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: SetupNode
-      uses: actions/setup-node@v2
-      with:
-        node-version: '12'
-    - name: Install and Build
+    - name: Install
+      run: npm install
+    - name: Build
       run: |
-        npm install
-        npm run-script test        
+        npm install parcel
+        npm run-script test       
   my-deploy:
     runs-on: ubuntu-latest
     needs: my-build
