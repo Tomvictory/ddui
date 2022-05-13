@@ -3,7 +3,7 @@ on:
     branches:    
       - main
 jobs:
-  build-and-deploy:
+  my-build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -12,6 +12,10 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '12'
+  my-deploy:
+    runs-on: ubuntu-latest
+    needs: my-build
+    steps:
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
