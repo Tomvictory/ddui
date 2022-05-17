@@ -5,6 +5,7 @@
 </template>
 
 <script>
+	import '../../public/svg'
 	export default {
 	  name: 'd-icon',
 	  props: ['name']
