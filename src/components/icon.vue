@@ -7,12 +7,12 @@
 <script>
 	import '../../public/svg'
 	export default {
-	  name: 'd-icon',
-	  props: ['name']
+		name: 'DdIcon',
+		props: ['name']
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
 	.d-icon {
 	       width: 1em; height: 1em;
 	       vertical-align: -0.15em;

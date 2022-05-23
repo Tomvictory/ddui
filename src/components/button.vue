@@ -14,7 +14,8 @@
 import Icon from './icon'
 export default {
   components:{
-	  'd-icon': Icon
+		name: 'DdButton',
+		'd-icon': Icon
   },
   props: {
 	icon: {},
@@ -33,7 +34,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss">
+<style lang="scss" scoped>
 	@keyframes spin{
 		0% {transform: rotate(0deg);}
 		100% {transform: rotate(360deg);}

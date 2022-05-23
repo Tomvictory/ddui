@@ -23,9 +23,23 @@
 			margin: 20px;
 		}
 	</style>
+	<style>
+		.box{
+			margin: 20px;
+		}
+	</style>
   </head>
   <body>
 	<div id="app">
+		<div class="box">
+			<d-input value="张三"></d-input>
+			<d-input value="李四" disabled></d-input>
+			<d-input value="王五" readonly></d-input>
+		</div>
+		<div class="box">
+			<d-input value="王" error="姓名不能少于两个字"></d-input>
+		</div>
+		<div class="box">
 		<d-button :loading="loading1" @click="loading1 = !loading1">设置</d-button>
 		<d-button icon="setting" :loading="loading2" @click="loading2 = !loading2">设置</d-button>
 		<d-button icon="setting" icon-position="right" :loading="loading3" @click="loading3 = !loading3">设置</d-button>
@@ -35,6 +49,7 @@
 			  <d-button>更多</d-button>
 			  <d-button icon="right" icon-position="right">下一页</d-button>
 		</d-button-group>
+		</div>
 	</div>
 	<script src="../src/main.js"></script>
   </body>
