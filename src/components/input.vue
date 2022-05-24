@@ -1,6 +1,10 @@
 <template>
 	<div class="wrapper" :class="{error}">
-		<input type="text" :value="value" :disabled="disabled" :readonly="readonly"></input>
+		<input type="text" :value="value" :disabled="disabled" :readonly="readonly"
+		@change="$emit('change',$event)"
+		@input="$emit('input',$event)"
+		@focus="$emit('focus',$event)"
+		@blur="$emit('blur',$event)"></input>
 		<template v-if="error">
 			<d-icon name="error" class="icon-error"></d-icon>
 			<span class="errorMessage">{{error}}</span>
@@ -11,7 +15,7 @@
 </template>
 
 <script>
-	import Icon from 'icon.vue'
+	import Icon from './icon'
 	export default{
 		name: 'DdInput',
 		components: {
@@ -49,7 +53,7 @@
 		display: inline-flex;
 		align-items: center;
 		> :not(:last-child) {
-			margin: .5em;
+			margin-right: .5em;
 		}
 		> input {
 			font-size: inherit;

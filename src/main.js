@@ -15,8 +15,8 @@ new Vue({
 		loading3: false
 	},
 	methods:{
-	  x:function(){
-		  console.log(this.loading1)
+	  inputChange:function(xx){
+		  console.log(xx)
 	  }
 	}
 }).$mount("#app")
