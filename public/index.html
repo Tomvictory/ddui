@@ -31,6 +31,12 @@
   </head>
   <body>
 	<div id="app">
+		
+		<div class="box">
+			<d-input value="王" v-model="inputValue"></d-input>
+			<p>{{inputValue}}</p>
+			<d-button :loading="loading1" @click="inputValue += '1'">+1</d-button>
+		</div>
 		<div class="box">
 			<d-input value="张三"></d-input>
 			<d-input value="李四" disabled></d-input>
