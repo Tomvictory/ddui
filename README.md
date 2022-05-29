@@ -5,14 +5,14 @@
 ## 开始使用
 1.添加css样式
 	使用本框架前，请在 css 中开启 border-box
-	```
+```
 	*,*::before,*::after{box-sizing: border-box;}
-	```
+```
 	IE8 及以上浏览器都支持
 
 
 	你还需要设置默认颜色等变量（后续会改为scss变量）
-	```
+```
 	:root {	--button-height: 32px;
 					--font-size: 14px;
 					--button-bg: white;
@@ -22,16 +22,16 @@
 					--border-color: #999;
 					--border-color-hover: #666;
 	}
-	```
+```
 	IE15 及以上浏览器都支持
 
 2.安装ddui
-	```
+```
 	npm i -S ddui tom-test-1
-	```
+```
 
 3.引入ddui
-	```
+```
 	import {Icon,Button,ButtonGroup,} from './components/button.vue'
 	import 'tom-test-1/dist/index.css'
 	
@@ -42,7 +42,7 @@
 		  'd-button': Button
 	  }
 	}
-	```
+```
 
 
 
