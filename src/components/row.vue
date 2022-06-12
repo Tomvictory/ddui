@@ -40,6 +40,7 @@
 <style lang="scss" scoped>
 	.row{
 		display: flex;
+		flex-wrap: wrap;
 		&.aligh-left{
 			justify-content: flex-start;
 		}
