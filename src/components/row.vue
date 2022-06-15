@@ -10,7 +10,7 @@
 			gutter: {
 				type: [Number,String]
 			},
-			aligh: {
+			align: {
 				type: String,
 				validator(value){
 					return ['left','right','center'].includes(value)
@@ -31,8 +31,8 @@
 					}
 			},
 			rowClass(){
-				let {aligh} = this
-				return [aligh && `aligh-${aligh}`]
+				let {align} = this
+				return [align && `align-${align}`]
 			}
 		}
 	}
@@ -41,13 +41,13 @@
 	.row{
 		display: flex;
 		flex-wrap: wrap;
-		&.aligh-left{
+		&.align-left{
 			justify-content: flex-start;
 		}
-		&.aligh-right{
+		&.align-right{
 			justify-content: flex-end;
 		}
-		&.aligh-center{
+		&.align-center{
 			justify-content: center;
 		}
 	}
