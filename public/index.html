@@ -19,19 +19,42 @@
 		body{
 			font-size: var(--font-size);
 		}
-		#app{
-			margin: 20px;
-		}
-	</style>
-	<style>
-		.box{
-			margin: 20px;
-		}
 	</style>
   </head>
   <body>
+	  <style>
+	  	.header{
+			background: #333;
+			border: 1px solid #333;
+			height: 100px;
+		}
+	  	.footer{
+			background: #999;
+			border: 1px solid #999;
+			height: 50px;
+		}
+	  	.sider{
+			background: #ccc;
+			border: 1px solid #ccc;
+			width: 230px;
+		}
+		.sider.slide-enter, .sider.slide-leave-to {
+		  margin-right: -230px;
+		}
+	  </style>
 	<div id="app">
-		<div class="box">
+		
+			<d-layout style="height: 100vh;">
+				<d-layout>
+					<d-header>header</d-header>
+					<d-content>content</d-content>
+					<d-footer>footer</d-footer>
+				</d-layout>
+				<d-sider>sider</d-sider>
+			</d-layout>
+		
+		
+		<!-- <div class="box">
 			<div style="border: 1px solid black;">
 				<d-row gutter="20">
 					<d-col span="24"
@@ -80,7 +103,7 @@
 			  <d-button>更多</d-button>
 			  <d-button icon="right" icon-position="right">下一页</d-button>
 		</d-button-group>
-		</div>
+		</div> -->
 	</div>
 	<script src="../src/main.js"></script>
   </body>
