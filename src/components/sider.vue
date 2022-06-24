@@ -21,7 +21,7 @@
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
 	.sider{
 		position: relative;
 		> button{
