@@ -10,6 +10,10 @@ import Header from './components/header.vue/'
 import Content from './components/content.vue'
 import Footer from './components/footer.vue'
 import Sider from './components/sider.vue'
+import Toast from './components/toast.vue'
+import Plugin from './plugin'
+Vue.use(Plugin)
+Vue.component('d-toast', Toast)
 Vue.component('d-icon', Icon)
 Vue.component('d-button', Button)
 Vue.component('d-button-group', ButtonGroup)
@@ -32,6 +36,9 @@ new Vue({
 	methods:{
 	  inputChange:function(xx){
 		  console.log(xx)
+	  },
+	  showToast:function(){
+		  this.$toast('我是 message')
 	  }
 	}
 }).$mount("#app")
