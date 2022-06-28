@@ -38,7 +38,17 @@ new Vue({
 		  console.log(xx)
 	  },
 	  showToast:function(){
-		  this.$toast('我是 message')
+		  
 	  }
+	},
+	created() {
+		this.$toast('我是 message我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是 <strong>加粗字体</strong>',{closeButton:{
+		  text: '我知道了',
+		  callback(toast){
+			  toast.log()
+			  console.log('用户说他知道了')
+		  }
+		},
+		enableHtml: true})
 	}
 }).$mount("#app")
