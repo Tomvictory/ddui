@@ -34,23 +34,23 @@ new Vue({
 		inputValue: 'test'
 	},
 	methods:{
-	  inputChange:function(xx){
-		  console.log(xx)
-	  },
-	  showToast:function(){
-		  
-	  }
+		inputChange:function(xx){
+			console.log(xx)
+		},
+		showToast:function(){
+			this.$toast('我是 message',{
+				closeButton:{
+					text: '我知道了',
+					callback(toast){
+						toast.log()
+						console.log('用户说他知道了')
+					}
+				},		
+				enableHtml: true
+			})
+		}
 	},
 	created() {
-		this.$toast('我是 message',{			
-			closeButton:{
-			  text: '我知道了',
-			  callback(toast){
-				  toast.log()
-				  console.log('用户说他知道了')
-			  }
-			},		
-			enableHtml: true
-		})
+		
 	}
 }).$mount("#app")
