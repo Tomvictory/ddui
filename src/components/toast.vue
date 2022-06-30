@@ -1,11 +1,13 @@
 <template>
-	<div class="toast" ref="wrapper" :class="toastPosition">
-		<div class="message">
-			<slot v-if="!enableHtml"></slot>
-			<div v-else v-html="$slots.default[0]"></div>
+	<div class="wrapper">
+		<div class="toast" ref="wrapper" :class="toastPosition">
+			<div class="message">
+				<slot v-if="!enableHtml"></slot>
+				<div v-else v-html="$slots.default[0]"></div>
+			</div>
+			<div class="line" ref="line"></div>
+			<span class="close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
 		</div>
-		<div class="line" ref="line"></div>
-		<span class="close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
 	</div>
 </template>
 
@@ -72,6 +74,7 @@
 			},
 			close(){
 				this.$el.remove()
+				this.$emit('close')
 				this.$destroy()
 			},
 			onClickClose(){
@@ -88,6 +91,10 @@
 	$font-size: 14px;
 	$toast-min-height: 40px;
 	$toast-bg: rgba(0,0,0,0.75);
+	@keyframes fade_in{
+		0%{opacity: 0;}
+		100%{opacity: 1;}
+	}
 	.toast{
 		position: fixed;
 		left: 50%;
@@ -102,6 +109,7 @@
 		border-radius: 4px;
 		box-shadow: 0 0 3px 0 rgba(0,0,0,0.50);
 		padding: 0 16px;
+		animation: fade_in 1s;
 		.message{
 			padding: 4px 0;
 		}
