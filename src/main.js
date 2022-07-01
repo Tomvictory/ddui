@@ -34,16 +34,11 @@ new Vue({
 		inputValue: 'test'
 	},
 	methods:{
-		inputChange:function(xx){
-			console.log(xx)
-		},
 		showToast1:function(){
 			this.$toast('我是 message',{
 				closeButton:{
 					text: '我知道了',
 					callback(toast){
-						toast.log()
-						console.log('用户说他知道了')
 					}
 				},		
 				enableHtml: true,
@@ -55,8 +50,6 @@ new Vue({
 				closeButton:{
 					text: '我知道了',
 					callback(toast){
-						toast.log()
-						console.log('用户说他知道了')
 					}
 				},		
 				enableHtml: true,
@@ -68,8 +61,6 @@ new Vue({
 				closeButton:{
 					text: '我知道了',
 					callback(toast){
-						toast.log()
-						console.log('用户说他知道了')
 					}
 				},		
 				enableHtml: true,
