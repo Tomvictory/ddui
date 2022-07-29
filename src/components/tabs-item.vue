@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs-item" @click="xxx">
+    <div class="tabs-item" @click="xxx" :class="classes">
         <slot></slot>
     </div>
 </template>
@@ -7,6 +7,11 @@
     export default{
         name: 'DdTabsItem',
         inject: ['eventBus'],
+        data (){
+            return {
+                active: false
+            }
+        },
         props: {
             disabled: {
                 type: Boolean,
@@ -19,8 +24,15 @@
         },
         created(){
             this.eventBus.$on('update:selected',(name)=>{
-                console.log(name)
+                this.active = name === this.name
             })
+        },
+        computed:{
+            classes(){
+                return {
+                    active: this.active
+                }
+            }
         },
         methods:{
             xxx(){
@@ -30,5 +42,11 @@
     }
 </script>
 <style lang="scss" scoped>
-.tabs-item{}
+.tabs-item{
+    flex-shrink: 0;
+    padding: 0 1em;
+    &.active{
+        background: red;
+    }
+}
 </style>
