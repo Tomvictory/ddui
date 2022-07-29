@@ -5,7 +5,8 @@
 </template>
 <script>
     export default{
-        name: 'DdTabsbody'
+        name: 'DdTabsbody',
+        inject: ['eventBus']
     }
 </script>
 <style lang="scss" scoped>
