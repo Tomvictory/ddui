@@ -42,8 +42,23 @@
 		  margin-right: -230px;
 		}
 	  </style> -->
-	<div id="app">
-		<button @click="showToast1">top</button>
+	<div id="app" style="padding-top: 100px; padding-left: 100px; border: 1px solid red;">
+
+		<div style="border: 1px solid green; padding: 5px; overflow: hidden;" @click="yyy">
+			<d-popover>
+				<template slot="content">
+					<div>content内容</div>
+				</template>
+				<button>点我</button>
+			</d-popover>
+			<d-popover>
+				<template slot="content">
+					<div>content内容</div>
+				</template>
+				<button>点我</button>
+			</d-popover>
+		</div>
+		<!-- <button @click="showToast1">top</button>
 		<button @click="showToast2">middle</button>
 		<button @click="showToast3">bottom</button>
 		<d-tabs :selected.sync="selectedTab">
@@ -61,7 +76,7 @@
 				<d-tabs-pane name="sports">体育相关资讯</d-tabs-pane>
 			</d-tabs-body>
 		</d-tabs>
-		<d-tabs><div></div></d-tabs>
+		<d-tabs><div></div></d-tabs> -->
 			<!-- <d-layout style="height: 100vh;">
 				<d-layout>
 					<d-header>header</d-header>

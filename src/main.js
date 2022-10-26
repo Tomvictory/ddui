@@ -17,6 +17,7 @@ import TabsHead from './components/tabs-head.vue'
 import TabsItem from './components/tabs-item.vue'
 import TabsBody from './components/tabs-body.vue'
 import TabsPane from './components/tabs-pane.vue'
+import Popover from './components/popover.vue'
 Vue.use(Plugin)
 Vue.component('d-toast', Toast)
 Vue.component('d-icon', Icon)
@@ -35,6 +36,7 @@ Vue.component('d-tabs-head',TabsHead)
 Vue.component('d-tabs-item',TabsItem)
 Vue.component('d-tabs-body',TabsBody)
 Vue.component('d-tabs-pane',TabsPane)
+Vue.component('d-popover',Popover)
 
 new Vue({
 	data:{
@@ -45,6 +47,7 @@ new Vue({
 		selectedTab: 'sports'
 	},
 	methods:{
+		yyy(){console.log('yyy')},
 		showToast1:function(){
 			this.$toast('我是 message',{
 				closeButton:{
