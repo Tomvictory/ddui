@@ -42,16 +42,28 @@
 		  margin-right: -230px;
 		}
 	  </style> -->
-	<div id="app" style="padding: 100px;">
+	<div id="app">
 
-		<div style="padding: 5px; overflow: hidden;">
+		<div style="padding: 150px; overflow: hidden;">
 			<d-popover>
 				<template slot="content">
 					<div>content内容</div>
 				</template>
 				<d-button>点我</d-button>
 			</d-popover>
-			<d-popover>
+			<d-popover position="bottom">
+				<template slot="content">
+					<div>content内容</div>
+				</template>
+				<d-button>点我</d-button>
+			</d-popover>
+			<d-popover position="left">
+				<template slot="content">
+					<div>content内容</div>
+				</template>
+				<d-button>点我</d-button>
+			</d-popover>
+			<d-popover position="right">
 				<template slot="content">
 					<div>content内容</div>
 				</template>
