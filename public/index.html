@@ -42,9 +42,9 @@
 		  margin-right: -230px;
 		}
 	  </style> -->
-	<div id="app">
+	<div id="app" style="padding-left:80px;">
 
-		<div style="padding: 150px; overflow: hidden;">
+		<div style="padding-top: 150px; padding-bottom: 40px; overflow: hidden;">
 			<d-popover>
 				<template slot="content">
 					<div>content内容</div>
@@ -64,6 +64,32 @@
 				<d-button>点我</d-button>
 			</d-popover>
 			<d-popover position="right">
+				<template slot="content">
+					<div>content内容</div>
+				</template>
+				<d-button>点我</d-button>
+			</d-popover>
+		</div>
+		<div style="padding-bottom: 150px; overflow: hidden;">
+			<d-popover trigger="hover">
+				<template slot="content">
+					<div>content内容</div>
+				</template>
+				<d-button>点我</d-button>
+			</d-popover>
+			<d-popover position="bottom" trigger="hover">
+				<template slot="content">
+					<div>content内容</div>
+				</template>
+				<d-button>点我</d-button>
+			</d-popover>
+			<d-popover position="left" trigger="hover">
+				<template slot="content">
+					<div>content内容</div>
+				</template>
+				<d-button>点我</d-button>
+			</d-popover>
+			<d-popover position="right" trigger="hover">
 				<template slot="content">
 					<div>content内容</div>
 				</template>
