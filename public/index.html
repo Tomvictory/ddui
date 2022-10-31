@@ -46,8 +46,8 @@
 
 		<div style="padding-top: 150px; padding-bottom: 40px; overflow: hidden;">
 			<d-popover>
-				<template slot="content">
-					<div>content内容</div>
+				<template slot="content" slot-scope="{close}">
+					<div>content内容<d-button @click="close">关闭</d-button></div>
 				</template>
 				<d-button>点我</d-button>
 			</d-popover>

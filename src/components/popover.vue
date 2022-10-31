@@ -1,7 +1,7 @@
 <template>
     <div class="popover" ref="popover">
         <div ref="contentWrapper" class="content-wrapper" v-if="visible" :class="{[`position-${position}`]:true}">
-            <slot name="content"></slot>
+            <slot name="content" :close="close"></slot>
         </div>
         <span ref="triggerWrapper" style="display:inline-block">
             <slot></slot>
@@ -14,6 +14,22 @@
         data () {
             return {
                 visible: false
+            }
+        },
+        props: {
+            position: {
+                type: String,
+                default: 'top',
+                validator(value){
+                    return ['top','bottom','left','right'].indexOf(value) >=0
+                }
+            },
+            trigger: {
+                type: String,
+                default: 'click',
+                validator(value){
+                    return ['click','hover'].indexOf(value) >=0
+                }
             }
         },
         mounted(){
@@ -45,22 +61,6 @@
                     return 'click'
                 }else{
                     return 'mouseleave'
-                }
-            }
-        },
-        props: {
-            position: {
-                type: String,
-                default: 'top',
-                validator(value){
-                    return ['top','bottom','left','right'].indexOf(value) >=0
-                }
-            },
-            trigger: {
-                type: String,
-                default: 'click',
-                validator(value){
-                    return ['click','hover'].indexOf(value) >=0
                 }
             }
         },
